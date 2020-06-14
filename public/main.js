@@ -1,6 +1,6 @@
 const choice = document.querySelector('.choices');
 const myForm = document.getElementById('user');
-console.log(choice);
+
 choice.addEventListener("change", (e) => {
     e.preventDefault();
     const ans = e.target.value;
@@ -20,6 +20,32 @@ choice.addEventListener("change", (e) => {
         myForm.appendChild(button);
     }
     else if (ans === "add") {
-        console.log('not implemented yet');
+        myForm.action = "/append";
+        let language = document.createElement('input');
+        language.setAttribute("type", "text");
+        language.setAttribute("name", "lang");
+        language.setAttribute("id", "lang");
+        let languageLabel = document.createElement('label');
+        languageLabel.setAttribute("for", "lang");
+        languageLabel.setAttribute("form", "user");
+        languageLabel.innerText = "Lanuage:"
+
+        let typed = document.createElement('input');
+        typed.setAttribute("type", "text");
+        typed.setAttribute("name", "type");
+        typed.setAttribute("id", "type");
+        let typedLabel = document.createElement('label');
+        typedLabel.setAttribute("for", "type");
+        typedLabel.setAttribute("form", "user");
+        typedLabel.innerText = "Typed:"
+
+        let button = document.createElement("button");
+        button.innerText = "Submit";
+
+        myForm.appendChild(languageLabel);
+        myForm.appendChild(language);
+        myForm.appendChild(typedLabel);
+        myForm.appendChild(typed);
+        myForm.append(button);
     }
 });

@@ -16,6 +16,8 @@
         </select>
     </label>
     <form action="" method="get" id="user"></form>
+    <h3>Number of results: <%= num %></h3>
+    <% if (num > 0) { %>
     <table>
         <tr>
             <th>Name</th>
@@ -28,6 +30,7 @@
             </tr>
         <% } %>
     </table>
+    <%} %>
     <script src="main.js"></script>
 </body>
 </html>

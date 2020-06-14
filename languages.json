@@ -1,6 +1,26 @@
-    [
-        {"name": "Java", "typing": "Static"},
-        {"name": "Python", "typing": "Dynamic"},
-        {"name": "JavaScript", "typing": "Dynamic"},
-        {"name": "C", "typing": "Static"}
-    ]
+[
+    {
+        "name": "Java",
+        "typing": "Static"
+    },
+    {
+        "name": "Python",
+        "typing": "Dynamic"
+    },
+    {
+        "name": "JavaScript",
+        "typing": "Dynamic"
+    },
+    {
+        "name": "C",
+        "typing": "Static"
+    },
+    {
+        "name": "C++",
+        "typing": "Static"
+    },
+    {
+        "name": "Ruby",
+        "typing": "Dynamic"
+    }
+]

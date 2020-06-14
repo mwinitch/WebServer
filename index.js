@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const fs = require('fs');
 const languages = require('./languages.json');
 const app = express();
 app.set('view engine', 'ejs');
@@ -17,7 +18,32 @@ app.get('/results', (req, res) => {
             languagesChosen.push(languages[i]);
         }
     }
-    res.render('response', {li: languagesChosen});
+    res.render('results', {li: languagesChosen, num: languagesChosen.length});
+});
+
+app.get('/append', (req, res) => {
+    let userLanguage = req.query.lang;
+    let userType = req.query.type;
+    if (!userLanguage || !userType) {
+        res.render('addition', {msg: "Please fill in all inputs.", error: true});
+    } else {
+        let unique = true;
+        for(let i = 0; i < languages.length; i++) {
+            if (languages[i].name === userLanguage) {
+                res.render('addition', {msg: `${userLanguage} already exists.`, error: true});
+                unique = false;
+            }
+        }
+        if (unique) {
+            userAddtion = {name: userLanguage, typing: userType};
+            languages.push(userAddtion);
+            fs.writeFile("languages.json", JSON.stringify(languages, null, 4), err => {
+                if (err) throw err;
+    
+                res.render('addition', {msg: `${userLanguage} was successfully added.`, error: false});
+            });
+        }
+    }
 });
 
 const PORT = process.env.PORT || 5000;
