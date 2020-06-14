@@ -7,12 +7,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/results', (req, res) => {
     let userRequest = req.query.id;
-    //console.log(req.query.id);
+    //If user does not input a string all entries will be given
     if (!userRequest) {
         userRequest = '';
     } 
-    console.log(languages.list);
-    res.render('response', {li: languages.list});
+    let languagesChosen = [];
+    for(let i = 0; i < languages.length; i++) {
+        if (languages[i].name.includes(userRequest)) {
+            languagesChosen.push(languages[i]);
+        }
+    }
+    res.render('response', {li: languagesChosen});
 });
 
 const PORT = process.env.PORT || 5000;

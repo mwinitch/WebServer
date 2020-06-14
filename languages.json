@@ -1,12 +1,6 @@
-{
-    "list": [
-        {
-            "name": "Java",
-            "typing": "Static"
-        },
-        {
-            "name": "Python",
-            "typing": "Dynamic"
-        }
+    [
+        {"name": "Java", "typing": "Static"},
+        {"name": "Python", "typing": "Dynamic"},
+        {"name": "JavaScript", "typing": "Dynamic"},
+        {"name": "C", "typing": "Static"}
     ]
-}
