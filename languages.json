@@ -1,0 +1,12 @@
+{
+    "list": [
+        {
+            "name": "Java",
+            "typing": "Static"
+        },
+        {
+            "name": "Python",
+            "typing": "Dynamic"
+        }
+    ]
+}
