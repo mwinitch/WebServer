@@ -24,10 +24,12 @@ app.get('/results', (req, res) => {
 app.get('/append', (req, res) => {
     let userLanguage = req.query.lang;
     let userType = req.query.type;
+    // Checks if the user gave an input for the name and type for the language
     if (!userLanguage || !userType) {
         res.render('addition', {msg: "Please fill in all inputs.", error: true});
     } else {
         let unique = true;
+        // Looks if the user's given language is already in the database
         for(let i = 0; i < languages.length; i++) {
             if (languages[i].name === userLanguage) {
                 res.render('addition', {msg: `${userLanguage} already exists.`, error: true});

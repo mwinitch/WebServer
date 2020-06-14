@@ -1,9 +1,11 @@
 const choice = document.querySelector('.choices');
 const myForm = document.getElementById('user');
 
+// This function gets called when the user chooses to "search" or "add" from the database
 choice.addEventListener("change", (e) => {
     e.preventDefault();
     const ans = e.target.value;
+    // Remove the old HTML from the previous HTML option tag selection
     if (myForm.childElementCount > 0) {
         myForm.querySelectorAll('*').forEach(n => n.remove());
     }
