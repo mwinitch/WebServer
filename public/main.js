@@ -41,11 +41,15 @@ choice.addEventListener("change", (e) => {
 
         let button = document.createElement("button");
         button.innerText = "Submit";
-
-        myForm.appendChild(languageLabel);
-        myForm.appendChild(language);
-        myForm.appendChild(typedLabel);
-        myForm.appendChild(typed);
+        
+        let div1 = document.createElement("div");
+        let div2 = document.createElement("div");
+        div1.appendChild(languageLabel);
+        div1.appendChild(language);
+        div2.appendChild(typedLabel);
+        div2.appendChild(typed);
+        myForm.appendChild(div1);
+        myForm.appendChild(div2);
         myForm.append(button);
     }
 });

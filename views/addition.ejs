@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Data</title>
+    <title>Languages</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -16,10 +16,10 @@
         </select>
     </label>
     <form action="" method="get" id="user"></form>
-    <% if (msg) { %>
+    <% if (error) { %>
     <h3 class="error"><%= msg %></h3>
     <%} else { %>
-    <h3><%= msg %></h3>
+    <h3 class="works"><%= msg %></h3>
     <% } %>
     <script src="main.js"></script>
 </body>

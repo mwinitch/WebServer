@@ -22,5 +22,13 @@
     {
         "name": "Ruby",
         "typing": "Dynamic"
+    },
+    {
+        "name": "Kotlin",
+        "typing": "Static"
+    },
+    {
+        "name": "C#",
+        "typing": "Static"
     }
 ]
